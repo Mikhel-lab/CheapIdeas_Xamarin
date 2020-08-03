@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+			 xmlns:viewModels="clr-namespace:Ideas.ViewModels"
+             x:Class="Ideas.Views.LoginPage">
+    <ContentPage.BindingContext>
+		<viewModels:LoginViewModel/>
+	</ContentPage.BindingContext>
+        <StackLayout Orientation="Vertical"
+					 Padding="30"
+					 Spacing="30">
+			
+			<Entry Text="{Binding UserName}"
+				   FontSize="30"
+				   Placeholder="username"/>
+
+		<Entry Text="{Binding Password}"
+			   IsPassword="True"
+			   FontSize="30"
+			   Placeholder="password"/>
+
+		<Button Command="{Binding LoginCommand}"
+				Text="Login"
+				BackgroundColor="DodgerBlue"
+				TextColor="White"
+				FontSize="30"/>
+
+		<Button Text="Go to ideas Page"
+					Clicked="Button_Clicked"/>
+	</StackLayout>
+   
+</ContentPage>

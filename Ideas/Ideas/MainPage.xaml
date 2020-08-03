@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Ideas.MainPage">
+
+	<StackLayout Margin="20,35,20,20">
+		<ListView>
+		<ListView.ItemsSource>
+				<x:Array Type="{x:Type x:String}">
+					<x:String>PMS</x:String>
+					<x:String>Crew</x:String>
+					<x:String>Marine Accounting</x:String>
+					<x:String>Rest Hour</x:String>
+					<x:String>Risk Assessment</x:String>
+					<x:String>Documents Forms</x:String>
+					<x:String>Environment</x:String>
+					<x:String>Bespoke Software</x:String>
+					<x:String>Safety Management</x:String>
+				</x:Array>
+			</ListView.ItemsSource>
+		</ListView>
+		<ListView ItemsSource="{Binding MoreData}"
+          ItemSelected="OnListViewItemSelected"
+          ItemTapped="OnListViewItemTapped" >
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<Grid Padding="10">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="*" />
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto" />
+								<ColumnDefinition Width="*" />
+							</Grid.ColumnDefinitions>
+							<Label Grid.Column="1"
+                           Text="{Binding Name}"
+                           FontAttributes="Bold" />
+							<Label Grid.Row="1"
+                           Grid.Column="1"
+                           Text="{Binding Location}"
+                           VerticalOptions="End" />
+						</Grid>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</StackLayout>
+
+</ContentPage>
+
+
+
+
+
+
+
+
+
+
